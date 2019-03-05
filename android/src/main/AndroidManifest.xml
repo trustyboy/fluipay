@@ -1,0 +1,72 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.lolizeppelin.fluipay">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 外部存储 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+
+    <application>
+
+        <activity
+            android:name=".IpayMainActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:launchMode="singleTop"
+            android:theme="@style/DisablePreviewTheme">
+        </activity>
+
+        <!-- 微支付SDK界面 -->
+        <!-- 显示网页界面 -->
+        <activity
+            android:name="com.iapppay.sdk.main.WebActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name="com.iapppay.ui.activity.PersonCenterActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"/>
+
+        <!-- 收银台-普通 -->
+        <activity
+            android:name="com.iapppay.ui.activity.PayHubActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"/>
+
+        <!-- 选择充值金额界面 -->
+        <activity
+            android:name="com.iapppay.ui.activity.SelectAmountActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.iapppay.ui.activity.ChargeActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:launchMode="singleTask"/>
+        <!-- 游戏卡和话费卡界面 -->
+        <activity
+            android:name="com.iapppay.ui.card.GamepayActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:launchMode="singleTask"/>
+
+        <!-- alipay sdk begin (新的支付宝) -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"/>
+        <!-- alipay sdk end -->
+    </application>
+
+</manifest>
+

@@ -1,0 +1,2 @@
+rootProject.name = 'fluipay'
+include ':iapppay_plugin'
