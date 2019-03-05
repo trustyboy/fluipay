@@ -1,6 +1,6 @@
 # fluipay
 
-Ipay  Flutter plugin.
+Ipay  Flutter plugin.  爱贝支付 Flutter 封装 
 
 ## Getting Started
 
